@@ -1,22 +1,22 @@
+import HomePage from "../../page-objects/pages/HomePage"
+import TopNavbar from "../../page-objects/components/TopNavbar"
+import SearchResultsPage from "../../page-objects/pages/SearchResultsPage"
+
 describe("Searchbox Test", () => {
+	const homePage = new HomePage()
+	const topNavbar = new TopNavbar()
+	const searchResultsPage = new SearchResultsPage()
+
 	before(function() {
-		cy.visit("http://zero.webappsecurity.com/index.html")
-		cy.url().should("include", "index.html")
-		cy.title().should(
-			"contain",
-			"Zero - Personal Banking - Loans - Credit Cards"
-		)
+		homePage.visit()
 	})
 
 	it("should search for value using searchbox", () => {
-		cy.get("#searchTerm").as("searchbox")
-		cy.get("@searchbox").type("bank {enter}")
-		cy.url().should("include", "search.html?searchTerm=bank")
+		topNavbar.search("bank")
 	})
 
 	it("should display search results page", () => {
-		cy.get("h2").as("Title")
-		cy.get("@Title").contains("Search Results:")
+		searchResultsPage.displayTitle()
 	})
 
 	it("should load homepage again", () => {

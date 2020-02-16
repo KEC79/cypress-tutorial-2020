@@ -1,5 +1,5 @@
-import HomePage from "../../page-objects/HomePage"
-import FeedbackPage from "../../page-objects/FeedbackPage"
+import HomePage from "../../page-objects/pages/HomePage"
+import FeedbackPage from "../../page-objects/pages/FeedbackPage"
 
 describe("Feedback Test", () => {
     const homePage = new HomePage()

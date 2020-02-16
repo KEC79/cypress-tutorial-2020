@@ -1,4 +1,4 @@
-import HomePage from "../../page-objects/HomePage"
+import HomePage from "../../page-objects/pages/HomePage"
 
 
 describe("HomePage test", () => {
