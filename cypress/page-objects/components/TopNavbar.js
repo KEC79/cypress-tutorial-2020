@@ -10,6 +10,11 @@ class TopNavbar {
         cy.get("#signin_button").click()
         cy.get("#login_form").should("be.visible")
     }
+
+    logoutOfApplication() {
+        cy.get(".icon-user").click()
+        cy.get("#logout_link").click()
+    }
 }
 
 export default TopNavbar
